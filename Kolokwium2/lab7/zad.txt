@@ -1,0 +1,62 @@
+System Biblioteki
+Lab 1
+Zadanie 1: Mavenowy projekt, pakiety i zarządzanie bazą danych
+Utwórz projekt Mavenowy o nazwie library-system.
+
+Struktura projektu powinna wyglądać następująco:
+
+library-system
+├── src
+│   └── main
+│       ├── java
+│       │   ├── database
+└── pom.xml
+Pakiet database
+
+Utwórz klasę DatabaseConnection w pakiecie database.
+Klasa powinna mieć prywatne pole java.sql.Connection.
+Dodaj publiczną metodę dostępową do tego pola.
+Utwórz metodę connect(String dbPath), która przyjmie ścieżkę do pliku z bazą w formacie SQLite i połączy się z nią.
+Utwórz metodę disconnect(), która rozłączy się z bazą.
+Klasa Main
+
+Utwórz klasę Main w pakiecie głównym, aby przetestować połączenie z bazą danych.
+Przetestuj połączenie z bazą danych, wyświetlając odpowiednie komunikaty po nawiązaniu i zakończeniu połączenia.
+
+Zadanie 2: Zarządzanie użytkownikami
+Pakiet library
+
+Utwórz rekord User w pakiecie library.
+Rekord powinien zawierać pola id oraz username.
+Klasa UserManager
+
+Utwórz klasę UserManager w pakiecie library.
+Klasa powinna posiadać prywatne pole java.sql.Connection oraz konstruktor przyjmujący połączenie jako argument.
+Utwórz metodę register(String username, String password), która dodaje nowego użytkownika do bazy danych. Hasło powinno być zaszyfrowane z użyciem biblioteki bcrypt.
+Utwórz metodę authenticate(String username, String password), która zwraca wartość logiczną mówiącą, czy nazwa użytkownika i hasło zgadzają się.
+Klasa Main
+
+Przetestuj metody UserManager w klasie Main.
+Przetestuj rejestrację użytkownika.
+Przetestuj uwierzytelnianie użytkownika.
+
+Lab 2
+
+Zadanie 1a
+Utwórz rekord Book składający się z tytułu (title), autora (author) oraz liczby stron (pages). Utwórz klasę Library dziedziczącą po ArrayList<Book>.
+
+Zadanie 1b
+Napisz test sprawdzający, czy nowo utworzona biblioteka (Library) jest pusta.
+
+Zadanie 1c
+Napisz test sprawdzający, czy po dodaniu jednej książki biblioteka ma rozmiar 1.
+
+Zadanie 1f
+W klasie Library napisz metodę getBookByPageCount, która przyjmie liczbę stron i zwróci obiekt Book, który ma taką liczbę stron. Napisz test sprawdzający działanie tej metody.
+
+Zadanie 3a
+Zapoznaj się z klasą LibraryAccount. Klasa rozszerza klasę Account o liczbę kredytów oraz listę książek posiadaną na koncie. Obie dane znajdują się wyłącznie w bazie danych. Napisz test sprawdzający poprawność rejestracji nowego konta.
+
+Zadanie 3b
+Napisz test sprawdzający poprawne logowanie się do konta.
+
